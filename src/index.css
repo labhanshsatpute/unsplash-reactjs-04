@@ -28,7 +28,7 @@
 /* Navbar */
 nav {
   z-index: 10;
-  border: 2px;
+  border-bottom: 2px solid #eee;
 }
 button.navbar-toggler {
   outline: none;
@@ -38,16 +38,12 @@ div.toggler-icon-line {
   border-radius: 3px;
   transition: 0.3s ease;
   margin: 7px 0px;
-  width: 35px;
+  width: 30px;
   height: 2px;
   background-color: #000;
   content: inherit;
 }
 div#navbar-collapse {
-  display: block;
-  transition: 0.5s ease;
-}
-div#navbar-collapse.active {
   display: block;
   transition: 0.5s ease;
 }
