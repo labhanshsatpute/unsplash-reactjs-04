@@ -5,8 +5,16 @@ import './index.css';
 import Navbar from './components/Navbar';
 import HomeSection from './HomeSection';
 import ImagesSection from './ImagesSection';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+    AOS.init({
+        delay: 300,
+        duration: 500
+    });
+    
     return (
         <React.Fragment>
             <Navbar/>

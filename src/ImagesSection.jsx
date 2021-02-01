@@ -10,43 +10,43 @@ class ImagesSection extends React.Component {
         }
     }
 
-
-    render() {
-
+    FetchData =()=> {
         fetch("https://api.unsplash.com/photos/?client_id=m7Xi0OEdk9W3P6ujqGuTWYrvKGLqNaLAC1Cg1b3GFOs")
         .then( (FetchedJson)=> FetchedJson.json())
         .then( (ApiData)=> {
+            console.log(ApiData.length);
             for (let i = 0; i < ApiData.length; i++) {
                 this.setState({ImageArray: this.state.ImageArray.concat(ApiData[i].urls.small)});
             }
         });
+    }
 
+    render() {
+        let i = 1;
         return (
             <React.Fragment>
-                <section id="ImagesSection">
+                <section id="ImagesSection" onMouseEnter={this.FetchData}>
                     <br/>
-                    <div className="container" >
+                    <div className="container">
                         <br/>
-                        <h3 className="font-weight-bold">Popular Images</h3>
+                        <h2 className="font-weight-bold text-center">Latest Images</h2>
+                        <hr/>
                         <br/>
-                        <div className="d-flex flex-lg-grow-0 flex-md-grow-1">
-                            <div className="flex-column">
-                                <ImageCard ImageAddress={this.state.ImageArray[1]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[2]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[3]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[4]}/>
+                        <div className="row">
+                            <div className="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
                             </div>
-                            <div className="flex-column">
-                                <ImageCard ImageAddress={this.state.ImageArray[4]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[5]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[6]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[7]}/>
+                            <div className="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
                             </div>
-                            <div className="flex-column">
-                                <ImageCard ImageAddress={this.state.ImageArray[8]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[9]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[10]}/>
-                                <ImageCard ImageAddress={this.state.ImageArray[11]}/>
+                            <div className="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
+                                <ImageCard ImageAddress={this.state.ImageArray[i++]}/>
                             </div>
                         </div>
                     </div>

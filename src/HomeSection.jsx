@@ -16,10 +16,9 @@ class HomeSection extends React.Component {
             console.log(apiJson);
             return apiJson.json();
         }).then( (apiData)=> {
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 20; i++) {
                 console.log(apiData[i].urls.full);              
             }
-            
         });
     }
 
