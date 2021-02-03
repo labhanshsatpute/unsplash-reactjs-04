@@ -8,21 +8,24 @@ class HomeSection extends React.Component {
         this.state = {
             ImageArray: [],
             DownloadArray: [],
-            SearchDataStyle: 'none'
+            page: 1,
+            searchQuery: '',
+            SearchDataStyle: 'none',
+            SearchImageStyle: 'none',
+            SearchTitle: ''
         }
     }
 
-    SearchImage =(e)=> {
+    SearchImage =()=> {
 
         this.setState({ImageArray: []});
         this.setState({DownloadArray: []});
 
-        e.preventDefault();
+        this.setState({SearchTitle: ('Showing result for ' + this.state.searchQuery)});
 
-        let searchQuery = document.getElementById('search').value;
-        const url = "https://api.unsplash.com/search/photos?page=1&query=";
+        const url = "https://api.unsplash.com/search/photos?page=" + this.state.page +"&query=";
         const id = "&client_id=m7Xi0OEdk9W3P6ujqGuTWYrvKGLqNaLAC1Cg1b3GFOs"
-        const fetchUrl = (url + searchQuery + id);
+        const fetchUrl = (url + this.state.searchQuery + id);
 
         fetch(fetchUrl).
         then( (FetchedJson)=> {
@@ -35,8 +38,41 @@ class HomeSection extends React.Component {
         }).catch( (error)=> {
             throw(error);
         });
-
         this.setState({SearchDataStyle: 'block'});
+        this.setState({SearchImageStyle: 'block'});
+        
+    }
+
+    SearchFormSubmit =(e)=> {
+        e.preventDefault();
+        let searchText = document.getElementById('search-text').value;
+        if (searchText == "") {
+            alert(" Please Enter Something ");
+        }
+        else {
+            this.setState({searchQuery: searchText});
+            setTimeout( ()=> {
+                this.SearchImage();
+            },300);
+        }
+    }
+
+    NextPage =()=> {
+        let PageIncrement = (this.state.page) + 1;
+        this.setState({page : PageIncrement});
+        setTimeout( ()=> {
+            this.SearchImage();
+        },300);
+    }
+
+    PreviousPage =()=> {
+        if (this.state.page > 1) {
+            let PageDrecement = (this.state.page) - 1;
+            this.setState({page : PageDrecement});
+            setTimeout( ()=> {
+                this.SearchImage();
+            },300);
+        }
     }
 
     render() {
@@ -60,12 +96,12 @@ class HomeSection extends React.Component {
                             <p className="text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, odit minus accusamus sequi impedit deserunt consectetur totam et obcaecati fugit. Alias vitae ullam aut. Sapiente numquam culpa assumenda id ullam.</p>
                         </div>
                         <div className="card-body text-left">
-                            <form className="form-group" id="search-box" onSubmit={this.SearchImage}>
+                            <form className="form-group" id="search-box" onSubmit={this.SearchFormSubmit}>
                                 <div className="input-group-append">
-                                    <input type="text" name="search" id="search" className="input-group-text w-100 text-left font-weight-bold" placeholder="Search here"/>
+                                    <input type="text" name="search" id="search-text" className="input-group-text w-100 text-left font-weight-bold" placeholder="Search here"/>
                                     <img src="icons/search.svg" alt="search" className="input-group-text"/>
                                 </div>
-                                <button id="searchButton" className="btn my-3 px-5 font-weight-bold">Search</button>
+                                <button type="submit" id="searchButton" className="btn my-3 px-5 font-weight-bold">Search</button>
                             </form>
                         </div>
                     </div>
@@ -77,7 +113,17 @@ class HomeSection extends React.Component {
                 {/* Searched Image Section (Start) */}
                 <section style={{display: this.state.SearchDataStyle}}>
                     <br/>
+                    <br/>
                     <div className="container">
+                        <div className="float-right">
+                            <button className="btn btn-primary mx-2" onClick={this.PreviousPage}><img src="icons/previous.svg" className="mb-1" alt="previous-img"/>Previous</button>
+                            <button className="btn btn-primary mx-2" onClick={this.NextPage}>Next<img src="icons/next.svg" className="mb-1" alt="next-img"/></button>
+                        </div>
+                        <h2>{this.state.SearchTitle}</h2>
+                    </div>
+                    <br/>
+                    <div className="container" style={{display: this.state.SearchImageStyle}}>
+                        <hr/>
                         <div className="row">
                             <div className="col-lg-4 col-md-6 col-sm-6 p-0">
                                 <ImageCard ImageAddress={this.state.ImageArray[ImageCount++]} DownloadLocation={this.state.DownloadArray[DownloadCount++]}/>
@@ -94,6 +140,12 @@ class HomeSection extends React.Component {
                                 <ImageCard ImageAddress={this.state.ImageArray[ImageCount++]} DownloadLocation={this.state.DownloadArray[DownloadCount++]}/>
                                 <ImageCard ImageAddress={this.state.ImageArray[ImageCount++]} DownloadLocation={this.state.DownloadArray[DownloadCount++]}/>
                             </div>
+                        </div>
+                        <hr/>
+                        <br/>
+                        <div className="d-flex justify-content-center align-items-center">
+                            <button className="btn btn-primary mx-2" onClick={this.PreviousPage}><img src="icons/previous.svg" className="mb-1" alt="previous-img"/>Previous</button>
+                            <button className="btn btn-primary mx-2" onClick={this.NextPage}>Next<img src="icons/next.svg" className="mb-1" alt="next-img"/></button>
                         </div>
                     </div>
                     <br/>

@@ -45,7 +45,6 @@ nav {
   border-bottom: 1px solid #eee;
   box-shadow: 0px 4px 8px 25% #000;
 }
-
 button.navbar-toggler {
   outline: none;
   border: none;
@@ -81,28 +80,28 @@ section#HomeSection {
   background-color:#d283ff;
 }
 
-form#search-box div input,
-form#search-box div img,
-form#search-box button {
+#search-box div input,
+#search-box div img,
+#search-box button {
   width: auto;
   outline: none;
   background-color: white;
   padding: 13px 30px;
 }
-form#search-box button {
+#search-box button {
   background-color: #5603ad;
   color: #fff;
 }
-form#search-box button:hover {
+#search-box button:hover {
   background-color: #fff;
   color: #5603ad;
 }
-form#search-box div input {
+#search-box div input {
   border-right: none;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-form#search-box div img {
+#search-box div img {
   border-left: none;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -110,6 +109,7 @@ form#search-box div img {
 
 /* Image Section */
 div.ImageCard div.card-body {
+  transition: 0.3s ease;
   position: absolute;
   width: 100%;
   transition: 1s ease;
