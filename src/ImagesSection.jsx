@@ -9,7 +9,8 @@ class ImagesSection extends React.Component {
             error: null,
             isLoaded: false,
             ImageArray: [],
-            DownloadArray: []
+            DownloadArray: [],
+            loaderData: 'block'
         }
     }
 
@@ -33,12 +34,20 @@ class ImagesSection extends React.Component {
         );
     }
 
+    hidePreloader =()=> {
+        this.setState({loaderData: 'none'});
+    }
+
     render() {
         let ImageCount = 1;
         let DownloadCount = 1;
         return (
             <React.Fragment>
-                <section id="ImagesSection">
+                <section id="preloader-section" className="d-flex justify-content-center align-items-center" 
+                style={{height: '100vh', width: '100%', display: (this.state.loaderData)}}>
+                    <div class="loader" id="loader"></div>
+                </section>
+                <section id="ImagesSection" onLoadCapture={this.hidePreloader}>
                     <br/>
                     <br/>
                     <br/>
