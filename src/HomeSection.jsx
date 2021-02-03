@@ -13,7 +13,6 @@ class HomeSection extends React.Component {
         e.preventDefault();
         let searchQuery = document.getElementById('search').value;
         fetch("https://api.unsplash.com/photos/?client_id=m7Xi0OEdk9W3P6ujqGuTWYrvKGLqNaLAC1Cg1b3GFOs").then( (apiJson)=> {
-            console.log(apiJson);
             return apiJson.json();
         }).then( (apiData)=> {
             for (let i = 0; i < 20; i++) {

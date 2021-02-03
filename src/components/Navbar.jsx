@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -38,8 +39,8 @@ function Navbar() {
 
                     <div className="navbar-collapse"  id="navbar-collapse">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item text-color-02 ml-auto"><a href="#" className="nav-link">Trending</a></li>
-                            <li className="nav-item text-color-02 ml-auto"><a href="#" className="nav-link">Catergory</a></li>
+                            <li className="nav-item text-color-02 ml-auto"><Link to="/" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Home</a></Link></li>
+                            <li className="nav-item text-color-02 ml-auto"><Link to="/images" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Images</a></Link></li>
                         </ul>
                     </div>
                 </div>
