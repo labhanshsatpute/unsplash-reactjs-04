@@ -99,7 +99,7 @@ class CategorySection extends React.Component {
                         <h2 className="font-weight-bold text-center text-color-01">Categories</h2>
                         <hr className="w-25 mx-auto"/>
                         <br/>
-                        <div className="container-fluid category-card-slider d-flex">
+                        <div className="container-fluid category-card-slider card-body d-flex">
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Automobile')}>Automobile</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Action')}>Action</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Adventure')}>Adventure</button>
@@ -107,6 +107,7 @@ class CategorySection extends React.Component {
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Wallpapers')}>Wallpapers</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Nature')}>Nature</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Architecture')}>Architecture</button>
+                            <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Photography')}>Photography</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Fashion')}>Fashion</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Technology')}>Technology</button>
                             <button className="btn d-inline-block m-2" onClick={ ()=> this.SearchCategory('Travel')}>Travel</button>

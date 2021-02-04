@@ -150,24 +150,19 @@ section#ImagePreview {
 
 /* Categories Section */
 div.category-card-slider {
-  background-image: linear-gradient(to right ,rgba(255,255,255,0.9) ,rgba(0,0,0,0) ,rgba(255,255,255,0.9) );
   overflow-x: scroll;
   width: 100%;
   height: auto;
 }
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+div.category-card-slider::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
+div.category-card-slider::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+div.category-card-slider::-webkit-scrollbar-thumb {
+  background: #888f;
 }
 /* Footer */
 footer#footer {
