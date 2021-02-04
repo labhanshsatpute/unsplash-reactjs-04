@@ -21,9 +21,6 @@
 *.text-color-02 {
   color: #3c096c;
 }
-*.text-color-03 {
-  color: #e5e5e5;
-}
 
 a.btn,
 button.btn {
@@ -57,18 +54,31 @@ nav {
   border: none;
   box-shadow: 0px 0px 10px rgb(153, 153, 153);
 }
+a.navbar-brand {
+  color: #3c096c;
+}
 button.navbar-toggler {
   outline: none;
   border: none;
 }
 div.toggler-icon-line {
-  border-radius: 1.5px;
+  border-radius: 3px;
   transition: 0.3s ease;
   margin: 7px 0px;
   width: 30px;
   height: 3px;
-  background-color: #000;
-  content: inherit;
+  background-color: #3c096c;
+}
+div#toggler-icon-line-1 {
+  width: 30px;
+}
+div#toggler-icon-line-2 {
+  margin-left: auto;
+  width: 20px;
+}
+div#toggler-icon-line-3 {
+  margin-left: auto;
+  width: 10px;
 }
 div#navbar-collapse {
   display: block;
@@ -105,10 +115,9 @@ section#HomeSection {
   background-color: white;
   padding: 13px 30px;
   border-radius: 7px;
-  border: 2px solid #5603ad;
+  border: 2px solid #3c096c;
 }
 #search-box button {
-  border: 2px solid #5603ad;
   background-color: #5603ad;
   color: #fff;
 }
@@ -134,11 +143,9 @@ img#status-img {
 /* Image Card */
 div.ImageCard div.card-body-2 {
   background-image: linear-gradient(rgba(0,0,0,0),rgba(255,255,255,0.5));
-  transition: 0.3s ease;
   position: absolute;
   width: 100%;
   bottom: 0px;
-  animation: slide 0.5s linear;
 }
 
 /* Footer */

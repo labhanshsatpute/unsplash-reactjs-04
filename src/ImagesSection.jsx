@@ -43,10 +43,6 @@ class ImagesSection extends React.Component {
         let DownloadCount = 1;
         return (
             <React.Fragment>
-                <section id="preloader-section" className="d-flex justify-content-center align-items-center" 
-                style={{height: '100vh', width: '100%', display: (this.state.loaderData)}}>
-                    <div class="loader" id="loader"></div>
-                </section>
                 <section id="ImagesSection" onLoadCapture={this.hidePreloader}>
                     <br/>
                     <br/>

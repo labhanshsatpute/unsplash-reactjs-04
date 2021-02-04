@@ -12,7 +12,11 @@ function Navbar() {
             document.querySelector('#toggler-icon-line-1').style.transform = 'rotate(0deg)';
             document.querySelector('#toggler-icon-line-1').style.marginTop = '0px';
             document.querySelector('#toggler-icon-line-3').style.transform = 'rotate(0deg)';
-            document.querySelector('#toggler-icon-line-1').style.marginBottom = '0px';            
+            document.querySelector('#toggler-icon-line-1').style.marginBottom = '0px';   
+            
+            document.querySelector('#toggler-icon-line-1').style.width = '30px';
+            document.querySelector('#toggler-icon-line-2').style.width = '20px';
+            document.querySelector('#toggler-icon-line-3').style.width = '10px';
         }
         else {
             document.querySelector('#navbar-collapse').style.display = "block";
@@ -22,6 +26,10 @@ function Navbar() {
             document.querySelector('#toggler-icon-line-1').style.marginTop = '-9px';
             document.querySelector('#toggler-icon-line-3').style.transform = 'rotate(-45deg)';
             document.querySelector('#toggler-icon-line-1').style.marginBottom = '-9px';
+
+            document.querySelector('#toggler-icon-line-1').style.width = '30px';
+            document.querySelector('#toggler-icon-line-2').style.width = '30px';
+            document.querySelector('#toggler-icon-line-3').style.width = '30px';
         }
         
     }
@@ -29,7 +37,7 @@ function Navbar() {
         <React.Fragment>
             <nav className="navbar navbar-expand-md navbar-light border-dark fixed-top bg-white card-body">
                 <div className="container">
-                    <a href="index.html" className="navbar-brand font-weight-bold text-color-02">Unsplash API</a>
+                    <a href="index.html" className="navbar-brand font-weight-bold">Unsplash API</a>
 
                     <button className="navbar-toggler" onClick={NavbarToggled} style={{outline: 'none'}} id="navbar-toggler">
                         <div className="toggler-icon-line" id="toggler-icon-line-1"></div>
@@ -39,8 +47,20 @@ function Navbar() {
 
                     <div className="navbar-collapse"  id="navbar-collapse">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item text-color-02 mx-auto"><Link to="/" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Home</a></Link></li>
-                            <li className="nav-item text-color-02 mx-auto"><Link to="/images" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Latest Images</a></Link></li>
+                            <hr/>
+                            <li className="nav-item mx-auto">
+                                <Link to="/" style={{textDecoration: 'none'}}>
+                                    <a href="#" className="nav-link text-color-02">Home</a>
+                                </Link>
+                            </li>
+                            <hr/>
+                            <li className="nav-item mx-auto">
+                                <Link to="/images" style={{textDecoration: 'none'}}>
+                                    <a href="#" className="nav-link
+                                 text-color-02">Latest Images</a>
+                                 </Link>
+                            </li>
+                            <hr/>
                         </ul>
                     </div>
                 </div>
