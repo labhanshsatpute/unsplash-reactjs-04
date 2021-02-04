@@ -41,6 +41,7 @@ class HomeSection extends React.Component {
             }
             else {
                 this.setState({ResultStatus: 'none'});
+                console.log(ApiData);
                 for (let i = 0; i < ApiData.results.length; i++) {
                     this.setState({ImageArray: this.state.ImageArray.concat(ApiData.results[i].urls.small)});
                     this.setState({DownloadArray: this.state.DownloadArray.concat(ApiData.results[i].links.download)});
@@ -51,9 +52,6 @@ class HomeSection extends React.Component {
         }).catch( (error)=> {
             throw(error);
         });
-        
-        
-        
     }
 
     SearchFormSubmit =(e)=> {
@@ -67,7 +65,7 @@ class HomeSection extends React.Component {
             this.setState({page : 1});
             setTimeout( ()=> {
                 this.SearchImage();
-            },300);
+            },100);
         }
     }
 
@@ -76,7 +74,7 @@ class HomeSection extends React.Component {
         this.setState({page : PageIncrement});
         setTimeout( ()=> {
             this.SearchImage();
-        },300);
+        },100);
     }
 
     PreviousPage =()=> {
@@ -85,7 +83,7 @@ class HomeSection extends React.Component {
             this.setState({page : PageDrecement});
             setTimeout( ()=> {
                 this.SearchImage();
-            },300);
+            },100);
         }
     }
 
@@ -154,9 +152,9 @@ class HomeSection extends React.Component {
                         <hr/>
                         <p className="text-center font-weight-bold">Pages</p>
                         <div className="d-flex justify-content-center align-items-center">
-                            <button className="btn mx-1 px-3 py-2 btn-outline-light border-0 " onClick={this.PreviousPage}><img src="icons/previous.svg" alt="pervious" className="mt-n1 mr-2"/>{this.state.page - 1}</button>
-                            <button className="btn mx-1 px-4 py-2 btn-outline-light border-0 ">{this.state.page}</button>
-                            <button className="btn mx-1 px-3 py-2 btn-outline-light border-0 " onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
+                            <button className="btn mx-1 px-3 py-2 btn-outline-light border-0" onClick={this.PreviousPage}><img src="icons/previous.svg" alt="pervious" className="mt-n1 mr-2"/>{this.state.page - 1}</button>
+                            <button className="btn mx-1 px-4 py-2 btn-outline-light border-0">{this.state.page}</button>
+                            <button className="btn mx-1 px-3 py-2 btn-outline-light border-0" onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
                         </div>
                     </div>
                     <br/>

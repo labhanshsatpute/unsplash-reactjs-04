@@ -50,14 +50,20 @@ function Navbar() {
                             <hr/>
                             <li className="nav-item mx-auto">
                                 <Link to="/" style={{textDecoration: 'none'}}>
-                                    <a href="#" className="nav-link" onClick={NavbarToggled} style={{color: '#3c096c'}}>Home</a>
+                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Home</button>
                                 </Link>
                             </li>
                             <hr/>
                             <li className="nav-item mx-auto">
                                 <Link to="/images" style={{textDecoration: 'none'}}>
-                                    <a href="#" className="nav-link" onClick={NavbarToggled} style={{color: '#3c096c'}}>Latest Images</a>
-                                 </Link>
+                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Latest Images</button>
+                                </Link>
+                            </li>
+                            <hr/>
+                            <li className="nav-item mx-auto">
+                                <Link to="/categories" style={{textDecoration: 'none'}}>
+                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Categories</button>
+                                </Link>
                             </li>
                             <hr/>
                         </ul>
