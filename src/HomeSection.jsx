@@ -12,7 +12,8 @@ class HomeSection extends React.Component {
             searchQuery: '',
             SearchDataStyle: 'none',
             SearchImageStyle: 'none',
-            SearchTitle: ''
+            SearchTitle: '',
+            ResultStatusImg: 'images/showing-result.png'
         }
     }
 
@@ -33,11 +34,13 @@ class HomeSection extends React.Component {
         }).then( (ApiData)=> {
             console.log(ApiData.results.length);
             if (ApiData.results.length == 0) {
-                this.setState({SearchTitle: 'Result not found!'});
+                this.setState({SearchTitle: 'Opps...! Result not found!'});
                 this.setState({SearchDataStyle: 'block'});
                 this.setState({SearchImageStyle: 'none'});
+                this.setState({ResultStatusImg: 'images/not-found.png'});
             }
             else {
+                this.setState({ResultStatusImg: 'images/showing-result.png'});
                 for (let i = 0; i < ApiData.results.length; i++) {
                     this.setState({ImageArray: this.state.ImageArray.concat(ApiData.results[i].urls.small)});
                     this.setState({DownloadArray: this.state.DownloadArray.concat(ApiData.results[i].links.download)});
@@ -104,7 +107,7 @@ class HomeSection extends React.Component {
                         <br/>
                         <div className="card-body text-left pb-0">
                             <h1 className="text-color-02">Search Images</h1>
-                            <p className="text-color-02">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, odit minus accusamus sequi impedit deserunt consectetur totam et obcaecati fugit. Alias vitae ullam aut. Sapiente numquam culpa assumenda id ullam.</p>
+                            <p className="text-dark">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, odit minus accusamus sequi impedit deserunt consectetur totam et obcaecati fugit. Alias vitae ullam aut. Sapiente numquam culpa assumenda id ullam.</p>
                         </div>
                         <div className="card-body text-left">
                             <form className="form-group" id="search-box" onSubmit={this.SearchFormSubmit}>
@@ -125,7 +128,8 @@ class HomeSection extends React.Component {
                 <section style={{display: this.state.SearchDataStyle}}>
                     <br/>
                     <br/>
-                    <div className="container">
+                    <div className="container" align="center">
+                        <img src={this.state.ResultStatusImg} alt="status-img" id="status-img" className="p-3"/>
                         <h2>{this.state.SearchTitle}</h2>
                     </div>
                     <div className="container px-4" style={{display: this.state.SearchImageStyle}}>

@@ -24,6 +24,7 @@
 *.text-color-03 {
   color: #e5e5e5;
 }
+
 a.btn,
 button.btn {
   border-radius: 7px;
@@ -111,6 +112,10 @@ section#HomeSection {
   border-left: none;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+img#status-img {
+  height: 200px;
+  width: auto;
 }
 
 /* Image Card */
