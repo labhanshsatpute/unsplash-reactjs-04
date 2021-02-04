@@ -150,9 +150,9 @@ class HomeSection extends React.Component {
                         <hr/>
                         <p className="text-center font-weight-bold">Pages</p>
                         <div className="d-flex justify-content-center align-items-center">
-                            <button className="btn mx-1 px-3 py-1" onClick={this.PreviousPage}><img src="icons/previous.svg" alt="pervious" className="mt-n1 mr-2"/>{this.state.page - 1}</button>
-                            <button className="btn mx-1 px-4 py-1">{this.state.page}</button>
-                            <button className="btn mx-1 px-3 py-1" onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
+                            <button className="btn mx-1 px-3 py-2" onClick={this.PreviousPage}><img src="icons/previous.svg" alt="pervious" className="mt-n1 mr-2"/>{this.state.page - 1}</button>
+                            <button className="btn mx-1 px-4 py-2">{this.state.page}</button>
+                            <button className="btn mx-1 px-3 py-2" onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
                         </div>
                     </div>
                     <br/>
