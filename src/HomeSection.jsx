@@ -61,6 +61,7 @@ class HomeSection extends React.Component {
         }
         else {
             this.setState({searchQuery: searchText});
+            this.setState({page : 1});
             setTimeout( ()=> {
                 this.SearchImage();
             },300);
