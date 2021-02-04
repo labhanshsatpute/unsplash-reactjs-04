@@ -13,7 +13,7 @@ class HomeSection extends React.Component {
             SearchDataStyle: 'none',
             SearchImageStyle: 'none',
             SearchTitle: '',
-            ResultStatusImg: 'images/showing-result.png'
+            ResultStatusImg: ''
         }
     }
 

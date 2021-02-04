@@ -10,7 +10,7 @@
   background-color: #d283ff;
 }
 *.bg-color-02 {
-  background-color: #5603ad;
+  background-color: #3c096c;
 }
 *.bg-color-03 {
   background-color: #e5e5e5;
@@ -19,7 +19,7 @@
   color: #d283ff;
 }
 *.text-color-02 {
-  color: #5603ad;
+  color: #3c096c;
 }
 *.text-color-03 {
   color: #e5e5e5;
@@ -54,25 +54,38 @@ div#loader {
 /* Navbar */
 nav {
   z-index: 10;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0px 4px 8px 25% #000;
+  border: none;
+  box-shadow: 0px 0px 10px rgb(153, 153, 153);
 }
 button.navbar-toggler {
   outline: none;
   border: none;
 }
 div.toggler-icon-line {
-  border-radius: 3px;
+  border-radius: 1.5px;
   transition: 0.3s ease;
   margin: 7px 0px;
   width: 30px;
-  height: 2px;
+  height: 3px;
   background-color: #000;
   content: inherit;
 }
 div#navbar-collapse {
   display: block;
-  transition: 0.5s ease;
+  animation: slide 0.3s linear;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    margin-top: -100px;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
 }
 
 /* Home Section */
@@ -119,13 +132,13 @@ img#status-img {
 }
 
 /* Image Card */
-div.ImageCard div.card-body {
+div.ImageCard div.card-body-2 {
   background-image: linear-gradient(rgba(0,0,0,0),rgba(255,255,255,0.5));
   transition: 0.3s ease;
   position: absolute;
   width: 100%;
-  transition: 1s ease;
   bottom: 0px;
+  animation: slide 0.5s linear;
 }
 
 /* Footer */

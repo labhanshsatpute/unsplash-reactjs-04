@@ -39,8 +39,8 @@ function Navbar() {
 
                     <div className="navbar-collapse"  id="navbar-collapse">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item text-color-02 ml-auto"><Link to="/" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Home</a></Link></li>
-                            <li className="nav-item text-color-02 ml-auto"><Link to="/images" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Latest Images</a></Link></li>
+                            <li className="nav-item text-color-02 mx-auto"><Link to="/" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Home</a></Link></li>
+                            <li className="nav-item text-color-02 mx-auto"><Link to="/images" style={{textDecoration: 'none'}}><a href="#" className="nav-link">Latest Images</a></Link></li>
                         </ul>
                     </div>
                 </div>
