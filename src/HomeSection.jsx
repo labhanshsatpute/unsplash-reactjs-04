@@ -31,15 +31,25 @@ class HomeSection extends React.Component {
         then( (FetchedJson)=> {
             return FetchedJson.json();
         }).then( (ApiData)=> {
-            for (let i = 0; i < ApiData.results.length; i++) {
-                this.setState({ImageArray: this.state.ImageArray.concat(ApiData.results[i].urls.small)});
-                this.setState({DownloadArray: this.state.DownloadArray.concat(ApiData.results[i].links.download)});
-            }            
+            console.log(ApiData.results.length);
+            if (ApiData.results.length == 0) {
+                this.setState({SearchTitle: 'Result not found!'});
+                this.setState({SearchDataStyle: 'block'});
+                this.setState({SearchImageStyle: 'none'});
+            }
+            else {
+                for (let i = 0; i < ApiData.results.length; i++) {
+                    this.setState({ImageArray: this.state.ImageArray.concat(ApiData.results[i].urls.small)});
+                    this.setState({DownloadArray: this.state.DownloadArray.concat(ApiData.results[i].links.download)});
+                }  
+                this.setState({SearchDataStyle: 'block'});
+                this.setState({SearchImageStyle: 'block'});
+            }    
         }).catch( (error)=> {
             throw(error);
         });
-        this.setState({SearchDataStyle: 'block'});
-        this.setState({SearchImageStyle: 'block'});
+        
+        
         
     }
 
@@ -115,14 +125,9 @@ class HomeSection extends React.Component {
                     <br/>
                     <br/>
                     <div className="container">
-                        <div className="float-right">
-                            <button className="btn btn-primary mx-2" onClick={this.PreviousPage}><img src="icons/previous.svg" className="mb-1" alt="previous-img"/>Previous</button>
-                            <button className="btn btn-primary mx-2" onClick={this.NextPage}>Next<img src="icons/next.svg" className="mb-1" alt="next-img"/></button>
-                        </div>
                         <h2>{this.state.SearchTitle}</h2>
                     </div>
-                    <br/>
-                    <div className="container" style={{display: this.state.SearchImageStyle}}>
+                    <div className="container px-4" style={{display: this.state.SearchImageStyle}}>
                         <hr/>
                         <div className="row">
                             <div className="col-lg-4 col-md-6 col-sm-6 p-0">
@@ -142,10 +147,11 @@ class HomeSection extends React.Component {
                             </div>
                         </div>
                         <hr/>
-                        <br/>
+                        <p className="text-center font-weight-bold">Pages</p>
                         <div className="d-flex justify-content-center align-items-center">
-                            <button className="btn btn-primary mx-2" onClick={this.PreviousPage}><img src="icons/previous.svg" className="mb-1" alt="previous-img"/>Previous</button>
-                            <button className="btn btn-primary mx-2" onClick={this.NextPage}>Next<img src="icons/next.svg" className="mb-1" alt="next-img"/></button>
+                            <button className="btn mx-1 px-3 py-1" onClick={this.PreviousPage}><img src="icons/previous.svg" alt="pervious" className="mt-n1 mr-2"/>{this.state.page - 1}</button>
+                            <button className="btn mx-1 px-4 py-1">{this.state.page}</button>
+                            <button className="btn mx-1 px-3 py-1" onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
                         </div>
                     </div>
                     <br/>

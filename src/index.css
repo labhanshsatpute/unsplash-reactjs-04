@@ -24,6 +24,17 @@
 *.text-color-03 {
   color: #e5e5e5;
 }
+a.btn,
+button.btn {
+  border-radius: 7px;
+  background-color: #5603ad;
+  color: #fff;
+}
+a.btn:hover,
+button.btn:hover {
+  background-color: #3c096c;
+  color: #fff;
+}
 
 /* Loader */
 div#loader {
@@ -63,23 +74,12 @@ div#navbar-collapse {
   transition: 0.5s ease;
 }
 
-/* Image Preview */
-div.ImagePerview {
-  height: 70vh;
-  width: 70%;
-  position: fixed;
-  overflow: inherit;
-  z-index: 20;
-  background-color: red;
-}
-
 /* Home Section */
 section#HomeSection {
   height: auto;
   width: 100%;
   background-color:#d283ff;
 }
-
 #search-box div input,
 #search-box div img,
 #search-box button {
@@ -87,6 +87,7 @@ section#HomeSection {
   outline: none;
   background-color: white;
   padding: 13px 30px;
+  border-radius: 7px;
 }
 #search-box button {
   background-color: #5603ad;
@@ -107,7 +108,7 @@ section#HomeSection {
   border-bottom-left-radius: 0px;
 }
 
-/* Image Section */
+/* Image Card */
 div.ImageCard div.card-body {
   transition: 0.3s ease;
   position: absolute;
