@@ -37,7 +37,7 @@ function Navbar() {
         <React.Fragment>
             <nav className="navbar navbar-expand-md navbar-light border-dark fixed-top bg-white card-body">
                 <div className="container">
-                    <a href="index.html" className="navbar-brand font-weight-bold">Unsplash API</a>
+                    <a href="index.html" className="navbar-brand font-weight-bold" style={{color: '#3c096c'}}>Unsplash API</a>
 
                     <button className="navbar-toggler" onClick={NavbarToggled} style={{outline: 'none'}} id="navbar-toggler">
                         <div className="toggler-icon-line" id="toggler-icon-line-1"></div>
@@ -50,14 +50,13 @@ function Navbar() {
                             <hr/>
                             <li className="nav-item mx-auto">
                                 <Link to="/" style={{textDecoration: 'none'}}>
-                                    <a href="#" className="nav-link text-color-02">Home</a>
+                                    <a href="#" className="nav-link" onClick={NavbarToggled} style={{color: '#3c096c'}}>Home</a>
                                 </Link>
                             </li>
                             <hr/>
                             <li className="nav-item mx-auto">
                                 <Link to="/images" style={{textDecoration: 'none'}}>
-                                    <a href="#" className="nav-link
-                                 text-color-02">Latest Images</a>
+                                    <a href="#" className="nav-link" onClick={NavbarToggled} style={{color: '#3c096c'}}>Latest Images</a>
                                  </Link>
                             </li>
                             <hr/>

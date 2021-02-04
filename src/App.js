@@ -4,7 +4,7 @@ import './App.css';
 import './index.css';
 import Navbar from './components/Navbar';
 import HomeSection from './HomeSection';
-import ImagesSection from './ImagesSection';
+import LatestImageSection from './LatestImageSection';
 import Footer from './components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,7 +23,7 @@ function App() {
                 <Navbar/>
                 <Switch>
                     <Route exact path="/" component={HomeSection}/>
-                    <Route exact path="/images" component={ImagesSection}/>
+                    <Route exact path="/images" component={LatestImageSection}/>
                     <Redirect to="/"/>
                 </Switch>
             </BrowserRouter>

@@ -9,18 +9,10 @@
 *.bg-color-01 {
   background-color: #d283ff;
 }
-*.bg-color-02 {
-  background-color: #3c096c;
-}
-*.bg-color-03 {
-  background-color: #e5e5e5;
-}
 *.text-color-01 {
-  color: #d283ff;
-}
-*.text-color-02 {
   color: #3c096c;
 }
+
 
 a.btn,
 button.btn {
@@ -53,9 +45,6 @@ nav {
   z-index: 10;
   border: none;
   box-shadow: 0px 0px 10px rgb(153, 153, 153);
-}
-a.navbar-brand {
-  color: #3c096c;
 }
 button.navbar-toggler {
   outline: none;

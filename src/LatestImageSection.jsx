@@ -1,16 +1,13 @@
 import React from 'react';
 import ImageCard from './components/ImageCard';
 
-class ImagesSection extends React.Component {
+class LatestImageSection extends React.Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            error: null,
-            isLoaded: false,
             ImageArray: [],
             DownloadArray: [],
-            loaderData: 'block'
         }
     }
 
@@ -24,18 +21,9 @@ class ImagesSection extends React.Component {
                 this.setState({DownloadArray:this.state.DownloadArray.concat(ApiData[i].links.download)});
             }
             this.setState({isLoaded: true});
-        },
-        (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        );
-    }
-
-    hidePreloader =()=> {
-        this.setState({loaderData: 'none'});
+        }).catch( (error)=> {
+            throw(error);
+        });
     }
 
     render() {
@@ -43,15 +31,15 @@ class ImagesSection extends React.Component {
         let DownloadCount = 1;
         return (
             <React.Fragment>
-                <section id="ImagesSection" onLoadCapture={this.hidePreloader}>
+                <section id="ImagesSection">
                     <br/>
                     <br/>
                     <br/>
                     <br/>
                     <br/>
-                    <div className="container">
+                    <div className="container px-4">
                         <br/>
-                        <h2 className="font-weight-bold text-center">Latest Images</h2>
+                        <h2 className="font-weight-bold text-center text-color-01">Latest Images</h2>
                         <hr className="w-25 mx-auto"/>
                         <br/>
                         <div className="row">
@@ -79,4 +67,4 @@ class ImagesSection extends React.Component {
     }
 }
 
-export default ImagesSection;
+export default LatestImageSection;
