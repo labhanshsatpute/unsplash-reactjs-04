@@ -5,9 +5,9 @@ import './index.css';
 import Navbar from './components/Navbar';
 import HomeSection from './HomeSection';
 import ImagesSection from './ImagesSection';
+import Footer from './components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ImagePreview from './components/ImagePreview';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
                     <Redirect to="/"/>
                 </Switch>
             </BrowserRouter>
+            <Footer/>
         </React.Fragment>
     );
 }

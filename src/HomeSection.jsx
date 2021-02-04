@@ -103,8 +103,8 @@ class HomeSection extends React.Component {
                         <br/>
                         <br/>
                         <div className="card-body text-left pb-0">
-                            <h1 className="text-white">Search Images</h1>
-                            <p className="text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, odit minus accusamus sequi impedit deserunt consectetur totam et obcaecati fugit. Alias vitae ullam aut. Sapiente numquam culpa assumenda id ullam.</p>
+                            <h1 className="text-color-02">Search Images</h1>
+                            <p className="text-color-02">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, odit minus accusamus sequi impedit deserunt consectetur totam et obcaecati fugit. Alias vitae ullam aut. Sapiente numquam culpa assumenda id ullam.</p>
                         </div>
                         <div className="card-body text-left">
                             <form className="form-group" id="search-box" onSubmit={this.SearchFormSubmit}>
@@ -112,7 +112,7 @@ class HomeSection extends React.Component {
                                     <input type="text" name="search" id="search-text" className="input-group-text w-100 text-left font-weight-bold" placeholder="Search here"/>
                                     <img src="icons/search.svg" alt="search" className="input-group-text"/>
                                 </div>
-                                <button type="submit" id="searchButton" className="btn my-3 px-5 border-0 font-weight-bold btn-outline-light">Search</button>
+                                <button type="submit" id="searchButton" className="btn my-3 px-5 font-weight-bold btn-outline-light">Search</button>
                             </form>
                         </div>
                     </div>
@@ -155,6 +155,7 @@ class HomeSection extends React.Component {
                             <button className="btn mx-1 px-3 py-2 btn-outline-light border-0 " onClick={this.NextPage}>{this.state.page + 1}<img src="icons/next.svg" alt="next" className="mt-n1 ml-2"/></button>
                         </div>
                     </div>
+                    <br/>
                     <br/>
                 </section>
                 {/* Searched Image Section (Start) */}
