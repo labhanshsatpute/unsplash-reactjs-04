@@ -37,9 +37,9 @@ function Navbar() {
         <React.Fragment>
             <nav className="navbar navbar-expand-md navbar-light border-dark fixed-top bg-white card-body">
                 <div className="container">
-                    <a href="index.html" className="navbar-brand font-weight-bold" style={{color: '#3c096c'}}>Unsplash API</a>
+                    <a href="index.html" className="navbar-brand font-weight-bold">Unsplash API</a>
 
-                    <button className="navbar-toggler" onClick={NavbarToggled} style={{outline: 'none'}} id="navbar-toggler">
+                    <button className="navbar-toggler" onClick={NavbarToggled} id="navbar-toggler">
                         <div className="toggler-icon-line" id="toggler-icon-line-1"></div>
                         <div className="toggler-icon-line" id="toggler-icon-line-2"></div>
                         <div className="toggler-icon-line" id="toggler-icon-line-3"></div>

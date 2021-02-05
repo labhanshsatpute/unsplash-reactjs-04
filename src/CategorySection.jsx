@@ -96,7 +96,7 @@ class CategorySection extends React.Component {
                     <br/>
                     <div className="container">
                         <br/>
-                        <h2 className="font-weight-bold text-center text-color-01">Categories</h2>
+                        <h2 className="font-weight-bold text-center">Categories</h2>
                         <hr className="w-25 mx-auto"/>
                         <br/>
                         <div className="container-fluid category-card-slider card-body d-flex">
@@ -125,7 +125,7 @@ class CategorySection extends React.Component {
                     <br/>
                     <div className="container" align="center">
                         <img src="images/not-found.png" style={{display: this.state.ResultStatus}} alt="status-img" id="status-img" className="p-3"/>
-                        <h2 className="font-weight-bold text-color-01">{this.state.SearchTitle}</h2>
+                        <h2 className="font-weight-bold">{this.state.SearchTitle}</h2>
                     </div>
                     <div className="container px-4" style={{display: this.state.SearchImageStyle}}>
                         <hr/>
