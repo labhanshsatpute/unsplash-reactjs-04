@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'reactjs-popup/dist/index.css';
 
 const ImageCard =(props)=> {
 
@@ -13,8 +12,8 @@ const ImageCard =(props)=> {
     }
 
     return (
-        <React.Fragment>
-            <div className="p-2" data-aos="fade-up">
+        <React.Fragment>            
+            <div className="p-2" data-aos="zoom-in">
                 <div className="card ImageCard" onMouseEnter={ShowCardBody} onMouseLeave={HideCardBody}>
                     <img src={props.ImageAddress} alt="Card-Image" className="img-fluid"/>
                     <div className="card-body card-body-2 bg-transparent w-100" style={{display: hide}}>

@@ -39,7 +39,7 @@ class LatestImageSection extends React.Component {
                     <br/>
                     <div className="container px-4">
                         <br/>
-                        <h2 className="font-weight-bold text-center text-color-01">Latest Images</h2>
+                        <h2 className="font-weight-bold text-center">Latest Images</h2>
                         <hr className="w-25 mx-auto"/>
                         <br/>
                         <div className="row">

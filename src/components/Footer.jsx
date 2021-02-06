@@ -13,7 +13,6 @@ const Footer =()=> {
                         <a href="https://twitter.com/LabhanshSatpute" target="_blank" className="mx-2"><img src="icons/twitter.svg" alt="twitter"/></a>
                         <a href="https://www.linkedin.com/in/labhansh-satpute-0060911a0/" target="_blank" className="mx-2"><img src="icons/linkedin.svg" alt="linkedin"/></a>
                     </div>
-
                     <hr/>
                 </div>
             </footer>
