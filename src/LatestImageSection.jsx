@@ -12,7 +12,7 @@ class LatestImageSection extends React.Component {
     }
 
     componentDidMount() {
-        const url = "https://api.unsplash.com/photos/?client_id=m7Xi0OEdk9W3P6ujqGuTWYrvKGLqNaLAC1Cg1b3GFOs";
+        const url = "https://api.unsplash.com/photos/?client_id=qqHpKrnb6hMyEeX8OIgZc72EpWoCR9jM6yfZXtXruo8";
         fetch(url)
         .then( (FetchedJson)=> FetchedJson.json())
         .then( (ApiData)=> {

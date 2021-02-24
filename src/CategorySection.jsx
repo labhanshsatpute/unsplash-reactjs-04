@@ -25,7 +25,7 @@ class CategorySection extends React.Component {
         this.setState({SearchTitle: (this.state.searchQuery)});
 
         const url = "https://api.unsplash.com/search/photos?page=" + this.state.page +"&query=";
-        const id = "&client_id=m7Xi0OEdk9W3P6ujqGuTWYrvKGLqNaLAC1Cg1b3GFOs"
+        const id = "&client_id=qqHpKrnb6hMyEeX8OIgZc72EpWoCR9jM6yfZXtXruo8";
         const fetchUrl = (url + this.state.searchQuery + id);
 
         fetch(fetchUrl).
