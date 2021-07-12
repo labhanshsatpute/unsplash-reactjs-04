@@ -16,6 +16,7 @@ class LatestImageSection extends React.Component {
         fetch(url)
         .then( (FetchedJson)=> FetchedJson.json())
         .then( (ApiData)=> {
+            console.log(ApiData);
             for (let i = 0; i < ApiData.length; i++) {
                 this.setState({ImageArray: this.state.ImageArray.concat(ApiData[i].urls.small)});
                 this.setState({DownloadArray:this.state.DownloadArray.concat(ApiData[i].links.download)});

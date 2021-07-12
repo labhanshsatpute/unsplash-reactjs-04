@@ -3,73 +3,54 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
 
-    const NavbarToggled =()=> {
-        if (document.querySelector('#navbar-collapse').style.display == "block") {
-            document.querySelector('#navbar-collapse').style.display = "none";
-
-
-            document.querySelector('#toggler-icon-line-2').style.display = 'block';
-            document.querySelector('#toggler-icon-line-1').style.transform = 'rotate(0deg)';
-            document.querySelector('#toggler-icon-line-1').style.marginTop = '0px';
-            document.querySelector('#toggler-icon-line-3').style.transform = 'rotate(0deg)';
-            document.querySelector('#toggler-icon-line-1').style.marginBottom = '0px';   
-            
-            document.querySelector('#toggler-icon-line-1').style.width = '30px';
-            document.querySelector('#toggler-icon-line-2').style.width = '20px';
-            document.querySelector('#toggler-icon-line-3').style.width = '10px';
+    window.onscroll = function (e) {
+        if (window.scrollY > 100) {
+            document.getElementById('navbar').classList.add('active');
+            document.getElementById('floating-buttons').classList.add('active');
         }
         else {
-            document.querySelector('#navbar-collapse').style.display = "block";
-
-            document.querySelector('#toggler-icon-line-2').style.display = 'none';
-            document.querySelector('#toggler-icon-line-1').style.transform = 'rotate(45deg)';
-            document.querySelector('#toggler-icon-line-1').style.marginTop = '-9px';
-            document.querySelector('#toggler-icon-line-3').style.transform = 'rotate(-45deg)';
-            document.querySelector('#toggler-icon-line-1').style.marginBottom = '-9px';
-
-            document.querySelector('#toggler-icon-line-1').style.width = '30px';
-            document.querySelector('#toggler-icon-line-2').style.width = '30px';
-            document.querySelector('#toggler-icon-line-3').style.width = '30px';
+            document.getElementById('navbar').classList.remove('active');
+            document.getElementById('floating-buttons').classList.remove('active');
         }
-        
     }
+
     return (
         <React.Fragment>
-            <nav className="navbar navbar-expand-md navbar-light border-dark fixed-top bg-white card-body">
+
+            {/* Navigation Bar (Start) */}
+            <nav className="navbar navbar-expand fixed-top card-body" id="navbar">
                 <div className="container">
-                    <a href="index.html" className="navbar-brand font-weight-bold">Unsplash API</a>
-
-                    <button className="navbar-toggler" onClick={NavbarToggled} id="navbar-toggler">
-                        <div className="toggler-icon-line" id="toggler-icon-line-1"></div>
-                        <div className="toggler-icon-line" id="toggler-icon-line-2"></div>
-                        <div className="toggler-icon-line" id="toggler-icon-line-3"></div>
-                    </button>
-
-                    <div className="navbar-collapse"  id="navbar-collapse">
-                        <ul className="navbar-nav ml-auto">
-                            <hr/>
-                            <li className="nav-item mx-auto">
-                                <Link to="/" style={{textDecoration: 'none'}}>
-                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Home</button>
-                                </Link>
-                            </li>
-                            <hr/>
-                            <li className="nav-item mx-auto">
-                                <Link to="/images" style={{textDecoration: 'none'}}>
-                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Latest Images</button>
-                                </Link>
-                            </li>
-                            <hr/>
-                            <li className="nav-item mx-auto">
-                                <Link to="/categories" style={{textDecoration: 'none'}}>
-                                    <button className="btn nav-btn btn-outline-light mx-2" onClick={NavbarToggled}>Categories</button>
-                                </Link>
-                            </li>
-                            <hr/>
-                        </ul>
+                    <Link to="/" style={{textDecoration: 'none'}}><a href="#" className="navbar-brand heading font-weight-bolder text-dark">Stock Images</a></Link>
+                    
+                    <div className="dropdown">
+                        <button className="dropdown-toggler" data-toggle="dropdown" id="navbar-toggler">
+                        <i class="fas fa-bars fa-2x"></i>
+                        </button>
+                        <div className="dropdown-menu shadow">
+                            <Link to="/" style={{textDecoration: 'none'}}>
+                                <button className="dropdown-item btn rounded-0">Home</button>
+                            </Link>
+                            <Link to="/images" style={{textDecoration: 'none'}}>
+                                <button className="dropdown-item btn rounded-0">Latest Images</button>
+                            </Link>
+                            <Link to="/categories" style={{textDecoration: 'none'}}>
+                                <button className="dropdown-item btn rounded-0">Categories</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </nav>
+            {/* Navigation Bar (Start) */}
+
+            {/* Floating Button (Start) */}
+            <div className="floating-button" id="floating-buttons">
+                <button className="btn button shadow" onClick={()=>{
+                    window.scroll({ top: 0, behavior: 'smooth'});
+                }}><i class="fas fa-arrow-up"></i></button>
+            </div>
+            {/* Floating Button (End) */}
+
+
         </React.Fragment>
     );
 };

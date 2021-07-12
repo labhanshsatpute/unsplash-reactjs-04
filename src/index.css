@@ -1,117 +1,123 @@
 /* Universal Elements */
 * {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0px;
   padding: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-size: 0.9rem;
 }
-*.text-color-01 {
-  color: #3c096c;
+:root {
+  --color-1: #14213d;
+  --color-2: #415a77;
+  --color-3: #495057;
+  --color-4: #fff;
 }
-a.btn,
-button.btn {
-  border-radius: 7px;
-  background-color: #5603ad;
-  color: #fff;
+*.heading {
+  color: var(--color-1);
 }
-a.btn:hover,
-button.btn:hover {
-  background-color: #3c096c;
-  color: #fff;
+*.description {
+  color: var(--color-3);
 }
+*.button {
+  background-color: var(--color-2);
+  color: var(--color-4);
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+*.button:hover {
+  background-color: var(--color-1);
+  color: var(--color-4);
+}
+a.btn:focus, 
+a.btn:active,
+button.btn:focus, 
+button.btn:active,
+select.custom-select:focus, 
+select.custom-select:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 
 /* Navbar */
 nav {
   z-index: 10;
-  border: none;
-  box-shadow: 0px 0px 10px rgb(153, 153, 153);
+  background-color: transparent;
+  transition: 0.3s ease;
 }
-button.navbar-toggler {
+nav.active {
+  z-index: 10;
+  background-color: #fff;
+  transition: 0.3s ease;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+button.dropdown-toggler {
   outline: none;
   border: none;
-}
-button.nav-btn {
   background-color: transparent;
-  color: #000;
-  border: none;
+  position: relative;
 }
-div.toggler-icon-line {
-  border-radius: 3px;
+div.dropdown-menu {
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  left: 0%;
+  top: 100%;
+  transform: translate(-83%,0%);
+}
+div.dropdown-menu .dropdown-item {
+  color: var(--color-4);
+}
+div.dropdown-menu .dropdown-item:hover {
+  color: var(--color-1);
+}
+div.floating-button {
+  position: fixed;
+  z-index: 10;
+  right: -50px;
+  bottom: 50px;
   transition: 0.3s ease;
-  margin: 7px 0px;
-  width: 30px;
-  height: 3px;
-  background-color: #3c096c;
 }
-div#toggler-icon-line-1 {
-  width: 30px;
-}
-div#toggler-icon-line-2 {
-  margin-left: auto;
-  width: 20px;
-}
-div#toggler-icon-line-3 {
-  margin-left: auto;
-  width: 10px;
-}
-div#navbar-collapse {
-  display: block;
-  animation: slide 0.3s linear;
-}
-@keyframes slide {
-  0% {
-    opacity: 0;
-    margin-top: -100px;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 0px;
-  }
+div.floating-button.active {
+  position: fixed;
+  z-index: 10;
+  right: 50px;
+  bottom: 50px;
+  transition: 0.3s ease;
 }
 
 /* Home Section */
 section#HomeSection {
   height: auto;
   width: 100%;
-  background-image: url('bgimg/bgimg-3.png');
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-image: url('bgimg/bgimg-3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-#search-box div input,
-#search-box div img,
-#search-box button {
-  width: auto;
+#search-box input {
+  background-color: transparent;
   outline: none;
-  background-color: white;
-  padding: 13px 30px;
-  border-radius: 7px;
-  border: 2px solid #3c096c;
-}
-#search-box button {
-  background-color: #5603ad;
+  border: none;
+  width: 100%;
+  text-align: left;
   color: #fff;
 }
-#search-box button:hover {
-  background-color: #fff;
-  color: #5603ad;
+#search-box input::placeholder {
+  color: #fff;
+  opacity: 0.7;
+  font-weight: normal;
 }
-#search-box div input {
-  border-right: none;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-#search-box div img {
-  border-left: none;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+#search-box div {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 img#status-img {
-  height: 200px;
+  height: 300px;
   width: auto;
 }
 
@@ -145,6 +151,8 @@ div.category-card-slider::-webkit-scrollbar-track {
 div.category-card-slider::-webkit-scrollbar-thumb {
   background: #888f;
 }
+
+
 /* Footer */
 footer#footer {
   background-color: #eee;
